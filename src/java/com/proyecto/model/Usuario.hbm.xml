@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.proyecto.model.Usuario" table="USUARIO" schema="PROYECTO">
+        <id name="idusuario" type="string">
+            <column name="IDUSUARIO" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="30" />
+        </property>
+        <property name="tipousuario" type="big_decimal">
+            <column name="TIPOUSUARIO" precision="0" />
+        </property>
+        <property name="activo" type="big_decimal">
+            <column name="ACTIVO" precision="0" />
+        </property>
+        <set name="docentes" inverse="true">
+            <key>
+                <column name="IDUSUARIO" length="30" />
+            </key>
+            <one-to-many class="com.proyecto.model.Docente" />
+        </set>
+    </class>
+</hibernate-mapping>

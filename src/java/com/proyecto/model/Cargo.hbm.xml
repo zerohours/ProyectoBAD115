@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.proyecto.model.Cargo" table="CARGO" schema="PROYECTO">
+        <composite-id name="id" class="com.proyecto.model.CargoId">
+            <key-property name="iddepartamento" type="string">
+                <column name="IDDEPARTAMENTO" length="10" />
+            </key-property>
+            <key-property name="iddocente" type="string">
+                <column name="IDDOCENTE" length="7" />
+            </key-property>
+            <key-property name="idcargo" type="string">
+                <column name="IDCARGO" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="docente" class="com.proyecto.model.Docente" update="false" insert="false" fetch="select">
+            <column name="IDDOCENTE" length="7" not-null="true" />
+        </many-to-one>
+        <many-to-one name="departamento" class="com.proyecto.model.Departamento" update="false" insert="false" fetch="select">
+            <column name="IDDEPARTAMENTO" length="10" not-null="true" />
+        </many-to-one>
+        <property name="nombrecargo" type="string">
+            <column name="NOMBRECARGO" length="150" />
+        </property>
+        <property name="fechainiciocargo" type="timestamp">
+            <column name="FECHAINICIOCARGO" length="7" />
+        </property>
+        <property name="fechafincargo" type="timestamp">
+            <column name="FECHAFINCARGO" length="7" />
+        </property>
+        <set name="propuestas" inverse="true">
+            <key>
+                <column name="IDDEPARTAMENTO" length="10" />
+                <column name="CAR_IDDOCENTE" length="7" />
+                <column name="IDCARGO" length="10" />
+            </key>
+            <one-to-many class="com.proyecto.model.Propuesta" />
+        </set>
+    </class>
+</hibernate-mapping>

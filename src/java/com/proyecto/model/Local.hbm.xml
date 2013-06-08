@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.proyecto.model.Local" table="LOCAL" schema="PROYECTO">
+        <id name="idlocal" type="string">
+            <column name="IDLOCAL" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombrelocal" type="string">
+            <column name="NOMBRELOCAL" length="50" />
+        </property>
+        <property name="capacidad" type="big_decimal">
+            <column name="CAPACIDAD" precision="0" />
+        </property>
+        <set name="horarios" inverse="true">
+            <key>
+                <column name="IDLOCAL" length="10" />
+            </key>
+            <one-to-many class="com.proyecto.model.Horario" />
+        </set>
+    </class>
+</hibernate-mapping>

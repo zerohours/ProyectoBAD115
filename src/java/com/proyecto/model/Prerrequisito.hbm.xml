@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.proyecto.model.Prerrequisito" table="PRERREQUISITO" schema="PROYECTO">
+        <composite-id name="id" class="com.proyecto.model.PrerrequisitoId">
+            <key-property name="idpropuesta" type="string">
+                <column name="IDPROPUESTA" length="10" />
+            </key-property>
+            <key-property name="codigomateria" type="string">
+                <column name="CODIGOMATERIA" length="6" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="materia" class="com.proyecto.model.Materia" update="false" insert="false" fetch="select">
+            <column name="IDPROPUESTA" length="10" not-null="true" />
+            <column name="CODIGOMATERIA" length="6" not-null="true" />
+        </many-to-one>
+        <property name="nombreprerrequisito" type="string">
+            <column name="NOMBREPRERREQUISITO" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

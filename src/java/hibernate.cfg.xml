@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+    <property name="hibernate.connection.username">proyecto</property>
+    <property name="hibernate.connection.password">proyecto</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="com/proyecto/model/Prerrequisito.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Recursos.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Horario.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Materia.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Usuario.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Pensum.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Docente.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Local.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Propuesta.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Cargo.hbm.xml"/>
+    <mapping resource="com/proyecto/model/Departamento.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

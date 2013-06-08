@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.proyecto.model.Horario" table="HORARIO" schema="PROYECTO">
+        <id name="idhorario" type="string">
+            <column name="IDHORARIO" length="3" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="materia" class="com.proyecto.model.Materia" fetch="select">
+            <column name="IDPROPUESTA" length="10" />
+            <column name="CODIGOMATERIA" length="6" />
+        </many-to-one>
+        <many-to-one name="local" class="com.proyecto.model.Local" fetch="select">
+            <column name="IDLOCAL" length="10" />
+        </many-to-one>
+        <property name="dia" type="string">
+            <column name="DIA" length="15" />
+        </property>
+        <property name="horainicio" type="timestamp">
+            <column name="HORAINICIO" length="7" />
+        </property>
+        <property name="horafin" type="timestamp">
+            <column name="HORAFIN" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>
