@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.proyecto.model.Docente" table="DOCENTE" schema="PROYECTO">
         <id name="iddocente" type="string">
@@ -11,20 +11,20 @@
         <many-to-one name="departamento" class="com.proyecto.model.Departamento" fetch="select">
             <column name="IDDEPARTAMENTO" length="10" />
         </many-to-one>
-        <many-to-one name="usuario" class="com.proyecto.model.Usuario" fetch="select">
-            <column name="IDUSUARIO" length="30" />
-        </many-to-one>
         <property name="nombredocente" type="string">
-            <column name="NOMBREDOCENTE" length="30" />
+            <column name="NOMBREDOCENTE" length="30" not-null="true" />
         </property>
         <property name="apellidodocente" type="string">
-            <column name="APELLIDODOCENTE" length="30" />
+            <column name="APELLIDODOCENTE" length="30" not-null="true" />
         </property>
         <property name="especialidad" type="string">
             <column name="ESPECIALIDAD" length="300" />
         </property>
         <property name="cargo" type="string">
-            <column name="CARGO" length="50" />
+            <column name="CARGO" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="45" not-null="true" />
         </property>
         <set name="propuestas" inverse="true">
             <key>
@@ -43,6 +43,12 @@
                 <column name="IDDOCENTE" length="7" not-null="true" />
             </key>
             <one-to-many class="com.proyecto.model.Cargo" />
+        </set>
+        <set name="usuarios" inverse="true">
+            <key>
+                <column name="IDDOCENTE" length="7" />
+            </key>
+            <one-to-many class="com.proyecto.model.Usuario" />
         </set>
     </class>
 </hibernate-mapping>

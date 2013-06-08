@@ -2,15 +2,16 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-schema="PROYECTO"/>
+  <table-filter match-name="HORARIO"/>
+  <table-filter match-name="DOCENTE"/>
+  <table-filter match-name="PERMISOS"/>
   <table-filter match-name="PENSUM"/>
   <table-filter match-name="PRERREQUISITO"/>
-  <table-filter match-name="PROPUESTA"/>
-  <table-filter match-name="MATERIA"/>
-  <table-filter match-name="CARGO"/>
-  <table-filter match-name="DEPARTAMENTO"/>
-  <table-filter match-name="LOCAL"/>
   <table-filter match-name="RECURSOS"/>
-  <table-filter match-name="HORARIO"/>
+  <table-filter match-name="MATERIA"/>
   <table-filter match-name="USUARIO"/>
-  <table-filter match-name="DOCENTE"/>
+  <table-filter match-name="CARGO"/>
+  <table-filter match-name="LOCAL"/>
+  <table-filter match-name="PROPUESTA"/>
+  <table-filter match-name="DEPARTAMENTO"/>
 </hibernate-reverse-engineering>

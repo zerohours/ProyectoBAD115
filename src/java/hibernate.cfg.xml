@@ -21,5 +21,12 @@
     <mapping resource="com/proyecto/model/Propuesta.hbm.xml"/>
     <mapping resource="com/proyecto/model/Cargo.hbm.xml"/>
     <mapping resource="com/proyecto/model/Departamento.hbm.xml"/>
+    <mapping/>
+    <mapping/>
+    <mapping/>
+    <mapping/>
+    <mapping/>
+    <mapping/>
+    <mapping resource="com/proyecto/model/Permisos.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

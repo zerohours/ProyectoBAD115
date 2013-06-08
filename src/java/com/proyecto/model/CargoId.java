@@ -1,5 +1,5 @@
 package com.proyecto.model;
-// Generated 06-08-2013 11:30:49 AM by Hibernate Tools 3.2.1.GA
+// Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -9,32 +9,32 @@ package com.proyecto.model;
 public class CargoId  implements java.io.Serializable {
 
 
-     private String iddepartamento;
      private String iddocente;
+     private String iddepartamento;
      private String idcargo;
 
     public CargoId() {
     }
 
-    public CargoId(String iddepartamento, String iddocente, String idcargo) {
-       this.iddepartamento = iddepartamento;
+    public CargoId(String iddocente, String iddepartamento, String idcargo) {
        this.iddocente = iddocente;
+       this.iddepartamento = iddepartamento;
        this.idcargo = idcargo;
     }
    
-    public String getIddepartamento() {
-        return this.iddepartamento;
-    }
-    
-    public void setIddepartamento(String iddepartamento) {
-        this.iddepartamento = iddepartamento;
-    }
     public String getIddocente() {
         return this.iddocente;
     }
     
     public void setIddocente(String iddocente) {
         this.iddocente = iddocente;
+    }
+    public String getIddepartamento() {
+        return this.iddepartamento;
+    }
+    
+    public void setIddepartamento(String iddepartamento) {
+        this.iddepartamento = iddepartamento;
     }
     public String getIdcargo() {
         return this.idcargo;
@@ -51,16 +51,16 @@ public class CargoId  implements java.io.Serializable {
 		 if ( !(other instanceof CargoId) ) return false;
 		 CargoId castOther = ( CargoId ) other; 
          
-		 return ( (this.getIddepartamento()==castOther.getIddepartamento()) || ( this.getIddepartamento()!=null && castOther.getIddepartamento()!=null && this.getIddepartamento().equals(castOther.getIddepartamento()) ) )
- && ( (this.getIddocente()==castOther.getIddocente()) || ( this.getIddocente()!=null && castOther.getIddocente()!=null && this.getIddocente().equals(castOther.getIddocente()) ) )
+		 return ( (this.getIddocente()==castOther.getIddocente()) || ( this.getIddocente()!=null && castOther.getIddocente()!=null && this.getIddocente().equals(castOther.getIddocente()) ) )
+ && ( (this.getIddepartamento()==castOther.getIddepartamento()) || ( this.getIddepartamento()!=null && castOther.getIddepartamento()!=null && this.getIddepartamento().equals(castOther.getIddepartamento()) ) )
  && ( (this.getIdcargo()==castOther.getIdcargo()) || ( this.getIdcargo()!=null && castOther.getIdcargo()!=null && this.getIdcargo().equals(castOther.getIdcargo()) ) );
    }
    
    public int hashCode() {
          int result = 17;
          
-         result = 37 * result + ( getIddepartamento() == null ? 0 : this.getIddepartamento().hashCode() );
          result = 37 * result + ( getIddocente() == null ? 0 : this.getIddocente().hashCode() );
+         result = 37 * result + ( getIddepartamento() == null ? 0 : this.getIddepartamento().hashCode() );
          result = 37 * result + ( getIdcargo() == null ? 0 : this.getIdcargo().hashCode() );
          return result;
    }   

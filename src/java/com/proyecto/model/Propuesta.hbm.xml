@@ -1,26 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.proyecto.model.Propuesta" table="PROPUESTA" schema="PROYECTO">
         <id name="idpropuesta" type="string">
             <column name="IDPROPUESTA" length="10" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="cargo" class="com.proyecto.model.Cargo" fetch="select">
-            <column name="IDDEPARTAMENTO" length="10" />
-            <column name="CAR_IDDOCENTE" length="7" />
-            <column name="IDCARGO" length="10" />
-        </many-to-one>
         <many-to-one name="docente" class="com.proyecto.model.Docente" fetch="select">
             <column name="IDDOCENTE" length="7" />
         </many-to-one>
+        <many-to-one name="cargo" class="com.proyecto.model.Cargo" fetch="select">
+            <column name="CAR_IDDOCENTE" length="7" />
+            <column name="IDDEPARTAMENTO" length="10" />
+            <column name="IDCARGO" length="10" />
+        </many-to-one>
         <property name="fechapropuesta" type="timestamp">
-            <column name="FECHAPROPUESTA" length="7" />
+            <column name="FECHAPROPUESTA" length="7" not-null="true" />
+        </property>
+        <property name="detalle" type="clob">
+            <column name="DETALLE" not-null="true" />
         </property>
         <property name="justificacion" type="clob">
-            <column name="JUSTIFICACION" />
+            <column name="JUSTIFICACION" not-null="true" />
         </property>
         <property name="aprobadojefe" type="big_decimal">
             <column name="APROBADOJEFE" precision="0" />

@@ -1,27 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 06-08-2013 11:30:51 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.proyecto.model.Usuario" table="USUARIO" schema="PROYECTO">
         <id name="idusuario" type="string">
             <column name="IDUSUARIO" length="30" />
             <generator class="assigned" />
         </id>
+        <many-to-one name="docente" class="com.proyecto.model.Docente" fetch="select">
+            <column name="IDDOCENTE" length="7" />
+        </many-to-one>
         <property name="password" type="string">
-            <column name="PASSWORD" length="30" />
+            <column name="PASSWORD" length="30" not-null="true" />
         </property>
-        <property name="tipousuario" type="big_decimal">
-            <column name="TIPOUSUARIO" precision="0" />
+        <property name="tipousuario" type="string">
+            <column name="TIPOUSUARIO" length="25" not-null="true" />
         </property>
-        <property name="activo" type="big_decimal">
-            <column name="ACTIVO" precision="0" />
+        <property name="estado" type="big_decimal">
+            <column name="ESTADO" precision="0" not-null="true" />
         </property>
-        <set name="docentes" inverse="true">
+        <set name="permisoses" inverse="true">
             <key>
-                <column name="IDUSUARIO" length="30" />
+                <column name="IDUSUARIO" length="30" not-null="true" />
             </key>
-            <one-to-many class="com.proyecto.model.Docente" />
+            <one-to-many class="com.proyecto.model.Permisos" />
         </set>
     </class>
 </hibernate-mapping>

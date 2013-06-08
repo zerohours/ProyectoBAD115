@@ -1,5 +1,5 @@
 package com.proyecto.model;
-// Generated 06-08-2013 11:30:49 AM by Hibernate Tools 3.2.1.GA
+// Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,33 +13,39 @@ public class Docente  implements java.io.Serializable {
 
      private String iddocente;
      private Departamento departamento;
-     private Usuario usuario;
      private String nombredocente;
      private String apellidodocente;
      private String especialidad;
      private String cargo;
+     private String email;
      private Set<Propuesta> propuestas = new HashSet<Propuesta>(0);
      private Set<Materia> materias = new HashSet<Materia>(0);
      private Set<Cargo> cargos = new HashSet<Cargo>(0);
+     private Set<Usuario> usuarios = new HashSet<Usuario>(0);
 
     public Docente() {
     }
 
 	
-    public Docente(String iddocente) {
+    public Docente(String iddocente, String nombredocente, String apellidodocente, String cargo, String email) {
         this.iddocente = iddocente;
+        this.nombredocente = nombredocente;
+        this.apellidodocente = apellidodocente;
+        this.cargo = cargo;
+        this.email = email;
     }
-    public Docente(String iddocente, Departamento departamento, Usuario usuario, String nombredocente, String apellidodocente, String especialidad, String cargo, Set<Propuesta> propuestas, Set<Materia> materias, Set<Cargo> cargos) {
+    public Docente(String iddocente, Departamento departamento, String nombredocente, String apellidodocente, String especialidad, String cargo, String email, Set<Propuesta> propuestas, Set<Materia> materias, Set<Cargo> cargos, Set<Usuario> usuarios) {
        this.iddocente = iddocente;
        this.departamento = departamento;
-       this.usuario = usuario;
        this.nombredocente = nombredocente;
        this.apellidodocente = apellidodocente;
        this.especialidad = especialidad;
        this.cargo = cargo;
+       this.email = email;
        this.propuestas = propuestas;
        this.materias = materias;
        this.cargos = cargos;
+       this.usuarios = usuarios;
     }
    
     public String getIddocente() {
@@ -55,13 +61,6 @@ public class Docente  implements java.io.Serializable {
     
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
-    }
-    public Usuario getUsuario() {
-        return this.usuario;
-    }
-    
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
     public String getNombredocente() {
         return this.nombredocente;
@@ -91,6 +90,13 @@ public class Docente  implements java.io.Serializable {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+    public String getEmail() {
+        return this.email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public Set<Propuesta> getPropuestas() {
         return this.propuestas;
     }
@@ -111,6 +117,13 @@ public class Docente  implements java.io.Serializable {
     
     public void setCargos(Set<Cargo> cargos) {
         this.cargos = cargos;
+    }
+    public Set<Usuario> getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
 

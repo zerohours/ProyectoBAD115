@@ -1,5 +1,5 @@
 package com.proyecto.model;
-// Generated 06-08-2013 11:30:49 AM by Hibernate Tools 3.2.1.GA
+// Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.math.BigDecimal;
@@ -15,9 +15,10 @@ public class Propuesta  implements java.io.Serializable {
 
 
      private String idpropuesta;
-     private Cargo cargo;
      private Docente docente;
+     private Cargo cargo;
      private Date fechapropuesta;
+     private Clob detalle;
      private Clob justificacion;
      private BigDecimal aprobadojefe;
      private BigDecimal aprobadodirector;
@@ -29,14 +30,18 @@ public class Propuesta  implements java.io.Serializable {
     }
 
 	
-    public Propuesta(String idpropuesta) {
+    public Propuesta(String idpropuesta, Date fechapropuesta, Clob detalle, Clob justificacion) {
         this.idpropuesta = idpropuesta;
+        this.fechapropuesta = fechapropuesta;
+        this.detalle = detalle;
+        this.justificacion = justificacion;
     }
-    public Propuesta(String idpropuesta, Cargo cargo, Docente docente, Date fechapropuesta, Clob justificacion, BigDecimal aprobadojefe, BigDecimal aprobadodirector, BigDecimal aprobadojunta, Set<Recursos> recursoses, Set<Materia> materias) {
+    public Propuesta(String idpropuesta, Docente docente, Cargo cargo, Date fechapropuesta, Clob detalle, Clob justificacion, BigDecimal aprobadojefe, BigDecimal aprobadodirector, BigDecimal aprobadojunta, Set<Recursos> recursoses, Set<Materia> materias) {
        this.idpropuesta = idpropuesta;
-       this.cargo = cargo;
        this.docente = docente;
+       this.cargo = cargo;
        this.fechapropuesta = fechapropuesta;
+       this.detalle = detalle;
        this.justificacion = justificacion;
        this.aprobadojefe = aprobadojefe;
        this.aprobadodirector = aprobadodirector;
@@ -52,13 +57,6 @@ public class Propuesta  implements java.io.Serializable {
     public void setIdpropuesta(String idpropuesta) {
         this.idpropuesta = idpropuesta;
     }
-    public Cargo getCargo() {
-        return this.cargo;
-    }
-    
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
-    }
     public Docente getDocente() {
         return this.docente;
     }
@@ -66,12 +64,26 @@ public class Propuesta  implements java.io.Serializable {
     public void setDocente(Docente docente) {
         this.docente = docente;
     }
+    public Cargo getCargo() {
+        return this.cargo;
+    }
+    
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
     public Date getFechapropuesta() {
         return this.fechapropuesta;
     }
     
     public void setFechapropuesta(Date fechapropuesta) {
         this.fechapropuesta = fechapropuesta;
+    }
+    public Clob getDetalle() {
+        return this.detalle;
+    }
+    
+    public void setDetalle(Clob detalle) {
+        this.detalle = detalle;
     }
     public Clob getJustificacion() {
         return this.justificacion;

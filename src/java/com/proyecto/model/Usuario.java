@@ -1,5 +1,5 @@
 package com.proyecto.model;
-// Generated 06-08-2013 11:30:49 AM by Hibernate Tools 3.2.1.GA
+// Generated 06-08-2013 12:51:34 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.math.BigDecimal;
@@ -13,24 +13,29 @@ public class Usuario  implements java.io.Serializable {
 
 
      private String idusuario;
+     private Docente docente;
      private String password;
-     private BigDecimal tipousuario;
-     private BigDecimal activo;
-     private Set<Docente> docentes = new HashSet<Docente>(0);
+     private String tipousuario;
+     private BigDecimal estado;
+     private Set<Permisos> permisoses = new HashSet<Permisos>(0);
 
     public Usuario() {
     }
 
 	
-    public Usuario(String idusuario) {
+    public Usuario(String idusuario, String password, String tipousuario, BigDecimal estado) {
         this.idusuario = idusuario;
+        this.password = password;
+        this.tipousuario = tipousuario;
+        this.estado = estado;
     }
-    public Usuario(String idusuario, String password, BigDecimal tipousuario, BigDecimal activo, Set<Docente> docentes) {
+    public Usuario(String idusuario, Docente docente, String password, String tipousuario, BigDecimal estado, Set<Permisos> permisoses) {
        this.idusuario = idusuario;
+       this.docente = docente;
        this.password = password;
        this.tipousuario = tipousuario;
-       this.activo = activo;
-       this.docentes = docentes;
+       this.estado = estado;
+       this.permisoses = permisoses;
     }
    
     public String getIdusuario() {
@@ -40,6 +45,13 @@ public class Usuario  implements java.io.Serializable {
     public void setIdusuario(String idusuario) {
         this.idusuario = idusuario;
     }
+    public Docente getDocente() {
+        return this.docente;
+    }
+    
+    public void setDocente(Docente docente) {
+        this.docente = docente;
+    }
     public String getPassword() {
         return this.password;
     }
@@ -47,26 +59,26 @@ public class Usuario  implements java.io.Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public BigDecimal getTipousuario() {
+    public String getTipousuario() {
         return this.tipousuario;
     }
     
-    public void setTipousuario(BigDecimal tipousuario) {
+    public void setTipousuario(String tipousuario) {
         this.tipousuario = tipousuario;
     }
-    public BigDecimal getActivo() {
-        return this.activo;
+    public BigDecimal getEstado() {
+        return this.estado;
     }
     
-    public void setActivo(BigDecimal activo) {
-        this.activo = activo;
+    public void setEstado(BigDecimal estado) {
+        this.estado = estado;
     }
-    public Set<Docente> getDocentes() {
-        return this.docentes;
+    public Set<Permisos> getPermisoses() {
+        return this.permisoses;
     }
     
-    public void setDocentes(Set<Docente> docentes) {
-        this.docentes = docentes;
+    public void setPermisoses(Set<Permisos> permisoses) {
+        this.permisoses = permisoses;
     }
 
 
